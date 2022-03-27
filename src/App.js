@@ -7,16 +7,22 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Products from './pages/Products';
 import Logo from './images/logoboisJOMS.png'; 
+import Computers from './pages/Computers';
+import Pheripals from './pages/Pheripals';
+
+const URL = 'http://localhost/verkkokauppabackend/';
 
 function App() {
   return (
     <>
     <Header />
-    <Navbar />
+    <Navbar url={URL}/>
   <div className='container'>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/Products" element={<Products />} />
+      <Route path="/Computers" element={<Computers />} />
+      <Route path="/Pheripals" element={<Pheripals />} />
     </Routes>
     </div>
     <Footer />
