@@ -5,6 +5,8 @@ header {
     background-color: aliceblue;
     padding-left: 15px;
 }
-h1 {
-    padding: 10px;
+
+img {
+    height: 200px;
+    padding-left: 30px;
 }
