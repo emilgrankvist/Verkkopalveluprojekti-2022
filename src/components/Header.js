@@ -1,10 +1,14 @@
 import React from 'react';
+import logo from '../images/logoboisJOMS.png';
 
 
-export default function Header() {
+function Images() {
+
   return (
-    <div><img src='Logo'></img>
-
+    <div>
+      <img src={logo} />
     </div>
   )
 }
+
+export default Images;
