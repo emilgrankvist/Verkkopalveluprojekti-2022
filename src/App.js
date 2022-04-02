@@ -9,6 +9,7 @@ import Products from './pages/Products';
 import Logo from './images/logoboisJOMS.png'; 
 import Computers from './pages/Computers';
 import Pheripals from './pages/Pheripals';
+import Feedback from './pages/Feedback';
 
 const URL = 'http://localhost/verkkokauppabackend/';
 
@@ -23,6 +24,7 @@ function App() {
       <Route path="/Products/:categoryId" element={<Products url={URL}/>} />
       <Route path="/Computers" element={<Computers />} />
       <Route path="/Pheripals" element={<Pheripals />} />
+      <Route path="/Feedback" element={<Feedback />} />
     </Routes>
     </div>
     <Footer />
