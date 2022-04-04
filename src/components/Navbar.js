@@ -45,22 +45,22 @@ export default function Navbar({url}) {
         </ul>
       </li>
       <li className="nav-item active">
-       <Link className='navbar-link' to="/">Home</Link>
+       <Link className='navbar-link eiViiva paddingLisäys center' to="/">Home</Link>
       </li>
       <li className="nav-item">
-        <Link className="navbar-link" to="/products">Komponentit</Link>
+        <Link className="navbar-link eiViiva paddingLisäys center" to="/products">Komponentit</Link>
       </li>
       <li className="nav-item">
-        <Link className="navbar-link" to="/Pheripals">Oheislaitteet</Link>
+        <Link className="navbar-link eiViiva paddingLisäys center" to="/Pheripals">Oheislaitteet</Link>
       </li>
       <li className="nav-item">
-        <Link className="navbar-link" to="/Computers">Tietokoneet</Link> 
+        <Link className="navbar-link eiViiva paddingLisäys center" to="/Computers">Tietokoneet</Link> 
       </li>
       
     </ul>
-    <form className="d-flex">
-        <input className="form-control me-2" type="search" placeholder="Syötä hakusana" aria-label="Search"/>
-        <button className="btn btn-outline-success" type="submit">Etsi</button>
+    <form className="d-flex navbarHAKU">
+        <input className="form-control me-2 " type="search" placeholder="Syötä hakusana" aria-label="Search"/>
+        <button className="btn btn-outline-primary" type="submit">Etsi</button>
       </form>
   </div>
 </nav>
