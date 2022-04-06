@@ -1,8 +1,8 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
-import Mainos1 from "../images/mainostesti1.jpg";
-import Mainos2 from "../images/mainostesti2.jpg";
-import Mainos3 from "../images/mainostesti3.jpg";
+import Mainos1 from "../images/mainos1.png";
+import Mainos2 from "../images/mainos2.png";
+import Mainos3 from "../images/mainos3.png";
 
 
 
@@ -10,7 +10,7 @@ export default function Bootstrap_Carousel() {
     return (
 
 <div>
-<Carousel className="marginLisäys center row-cols-1 mainosKokoa">
+<Carousel className="marginLisäys mainosKokoa">
   <Carousel.Item>
     <img
       className="d-block w-100"
@@ -18,8 +18,8 @@ export default function Bootstrap_Carousel() {
       alt="First slide"
     />
     <Carousel.Caption>
-      <h3>Tähän mainos 1</h3>
-      <p>Jotain pelaamisesta idk</p>
+      <h3></h3>
+      <p></p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
@@ -30,8 +30,8 @@ export default function Bootstrap_Carousel() {
     />
 
     <Carousel.Caption>
-      <h3>Tähän mainos 2</h3>
-      <p>Tietokone korjaus mainos esim.</p>
+      <h3></h3>
+      <p></p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
@@ -42,8 +42,8 @@ export default function Bootstrap_Carousel() {
     />
 
     <Carousel.Caption>
-      <h3>Tähän mainos 3</h3>
-      <p>Alennuksia?</p>
+      <h3></h3>
+      <p></p>
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>

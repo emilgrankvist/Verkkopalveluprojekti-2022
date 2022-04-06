@@ -7,11 +7,8 @@ header {
 }
 
 img {
-<<<<<<< HEAD
-=======
-    height: 200px;
->>>>>>> ded548289603373bb50ec3a8706c55c143c06bfb
     padding-left: 10px;
+    max-height: 500px;
 }
 
 
