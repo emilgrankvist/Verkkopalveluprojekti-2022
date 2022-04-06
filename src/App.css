@@ -43,13 +43,16 @@ input[type=text], input[type=number], input[type=email], select, textarea {
 
  /* NAVBAR hakusanapalkki sivun oikealle puolelle mahdollisesti? //KESKEN// */
 
-    .navbarHAKU {
-       float: right;
+
+
+    .FIXEDnavbar {
+        opacity: 90%;
+        max-width: 650px;
+        float: right;
+        position:absolute;
+        border-radius: 15px;
     }
-
-
-
-
+    
 
 
   /* linkeistä alleviivaus pois ja sininen pois linkeistä */

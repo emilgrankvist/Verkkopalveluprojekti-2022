@@ -11,6 +11,7 @@ import Products from './pages/Products';
 import Computers from './pages/Computers';
 import Pheripals from './pages/Pheripals';
 import Feedback from './pages/Feedback';
+import NavbarFixedTOP from './components/NavbarFixedTOP';
 
 
 const URL = 'http://localhost/verkkokauppabackend/';
@@ -18,6 +19,10 @@ const URL = 'http://localhost/verkkokauppabackend/';
 function App() {
   return (
     <>
+ 
+    <NavbarFixedTOP />
+
+
     <Header />
     <Navbar url={URL}/>
   <div className='container'>
