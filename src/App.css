@@ -6,10 +6,6 @@ header {
     padding-left: 15px;
 }
 
-img {
-    padding-left: 10px;
-    max-height: 500px;
-}
 
 .logoboisJOMS {
     padding-left: 1px;
@@ -50,8 +46,8 @@ input[type=text], input[type=number], input[type=email], select, textarea {
     }
     
     .navbarMargin {
-        margin-left: 300px;
-        margin-right: 300px;
+        margin-left: 12px;
+        margin-right: 12px;
     }
 
     .HakuOikealle {
@@ -76,7 +72,8 @@ input[type=text], input[type=number], input[type=email], select, textarea {
   /* lisää muokkauksia mainoksille "karuselli" //KESKEN//  */
 
   .mainosKokoa {
-      max-height: 1000px;
+      max-height: 1500px;
+      max-width: 1500px;
   }
 
   .marginLisäys {

@@ -10,7 +10,7 @@ export default function Bootstrap_Carousel() {
     return (
 
 <div>
-<Carousel className="marginLisäys mainosKokoa">
+<Carousel >
   <Carousel.Item>
     <img
       className="d-block w-100"

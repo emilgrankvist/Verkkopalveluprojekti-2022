@@ -23,11 +23,15 @@ function App() {
     <NavbarFixedTOP />
 
 
-    <Header />
+    <Header />  
+
+    <div className='container'>
     <Navbar url={URL}/>
   <div className='container'>
  
     <BootstrapCarousel />
+
+    </div>
 
     <BootstrapCard />
 
