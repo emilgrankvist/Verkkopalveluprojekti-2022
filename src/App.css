@@ -58,6 +58,10 @@ input[type=text], input[type=number], input[type=email], select, textarea {
         padding-left: 230px;
     }
 
+    .navbarReunat {
+        border-radius: 10px 10px 10px 10px;
+    }
+
 
   /* linkeistä alleviivaus pois ja sininen pois linkeistä */
   .eiViiva {
@@ -125,3 +129,5 @@ input[type=text], input[type=number], input[type=email], select, textarea {
 /* Feedback */
 
 /* pibbels */
+
+/* Emil = BatChest */
