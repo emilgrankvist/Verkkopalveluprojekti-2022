@@ -81,6 +81,13 @@ input[type=text], input[type=number], input[type=email], select, textarea {
       margin-bottom: 30px;
   }
 
+  .korttiMarginLisäys {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
   /* teksti keskelle diviä */
 
   .center {

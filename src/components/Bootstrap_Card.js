@@ -26,7 +26,7 @@ const Bootstrap_Card = () => {
 
     const renderCard = (card, index) => {
         return (
-            <Card style={{ width: '18rem' }} key={index} className="Kortti paddingLisäys marginLisäys center">
+            <Card style={{ width: '14rem' }} key={index} className="Kortti paddingLisäys korttiMarginLisäys center">
             <Card.Img variant="top"  src={card.image} />
             <Card.Body className='cen'>
               <Card.Title>{card.title}</Card.Title>
