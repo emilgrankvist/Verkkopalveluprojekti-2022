@@ -54,6 +54,14 @@ input[type=text], input[type=number], input[type=email], select, textarea {
         float: right;
     }
 
+    .navbarHAKU {
+        align-content: flex-end;
+    }
+
+    .navbarPadding {
+        padding-left: 230px;
+    }
+
 
   /* linkeistä alleviivaus pois ja sininen pois linkeistä */
   .eiViiva {

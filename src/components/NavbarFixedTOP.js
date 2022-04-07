@@ -19,7 +19,7 @@ export default function NavbarFixedTOP() {
     <form>
       
     </form>
-    <form className="d-flex navbarHAKU paddingLisäys HakuOikealle">
+    <form className="d-flex navbarHAKU navbarPadding HakuOikealle">
         <input className="form-control me-2 " type="search" placeholder="Hakusana" aria-label="Search"/>
         <button className="btn btn-outline-primary" type="submit">Etsi</button>
       </form>
