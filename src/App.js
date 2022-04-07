@@ -26,13 +26,16 @@ function App() {
     <Header />  
 
     <div className='container'>
+
+
     <Navbar url={URL}/>
-  <div className='container'>
  
     <BootstrapCarousel />
 
     </div>
 
+
+    <div className='container paddingLisäys2'>
     <BootstrapCard />
 
     <Routes>
@@ -42,6 +45,7 @@ function App() {
       <Route path="/Pheripals" element={<Pheripals />} />
       <Route path="/Feedback" element={<Feedback />} />
     </Routes>
+
     </div>
     <Footer />
 
