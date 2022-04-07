@@ -59,7 +59,8 @@ input[type=text], input[type=number], input[type=email], select, textarea {
     }
 
     .navbarReunat {
-        border-radius: 10px 10px 10px 10px;
+        border-radius: 10px;
+        border-collapse: separate; 
     }
 
 
