@@ -82,6 +82,11 @@ input[type=text], input[type=number], input[type=email], select, textarea {
       padding-bottom: 40px;
   }
 
+  .paddingTilaa {
+      padding-right: 10px;
+      padding-left: 10px;
+  }
+
 
   /* lisää muokkauksia mainoksille "karuselli"  */
 
@@ -127,8 +132,12 @@ input[type=text], input[type=number], input[type=email], select, textarea {
         margin-bottom: 10px;
       }
 
+    .korttitaustaVäri {
+        background-color: black;
+    }
+
 /* Feedback */
 
 /* pibbels */
 
-/* Emil = BatChest */
+/* Sami MURVINEN */
