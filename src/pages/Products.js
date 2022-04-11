@@ -25,6 +25,7 @@ export default function Products({ url }) {
       {products.map(product => (
         <div key={product.id}>
           {product.name}
+          <div><img src={url + 'img/' +product.image} alt="Kuva tuotteelle"></img></div>
         </div>
       ))}
     </div>
