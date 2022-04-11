@@ -4,6 +4,7 @@ import {Routes, Route} from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import NavbarSuositus from './components/NavbarSuositus';
 import BootstrapCard from './components/Bootstrap_Card';
 import BootstrapCarousel from './components/Bootstrap_Carousel';
 import Home from './pages/Home';
@@ -23,12 +24,17 @@ function App() {
     <NavbarFixedTOP />
 
 
-    <Header />
+    <Header />  
+
+    <div className='container'>
+
+
     <Navbar url={URL}/>
-  <div className='container'>
  
     <BootstrapCarousel />
 
+    <NavbarSuositus />
+    
     <BootstrapCard />
 
     <Routes>
@@ -38,6 +44,7 @@ function App() {
       <Route path="/Pheripals" element={<Pheripals />} />
       <Route path="/Feedback" element={<Feedback />} />
     </Routes>
+
     </div>
     <Footer />
 

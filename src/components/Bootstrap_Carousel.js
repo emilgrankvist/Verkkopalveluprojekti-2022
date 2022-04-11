@@ -10,17 +10,14 @@ export default function Bootstrap_Carousel() {
     return (
 
 <div>
-<Carousel className="marginLisäys mainosKokoa">
+<Carousel >
   <Carousel.Item>
     <img
       className="d-block w-100"
       src={Mainos1}
       alt="First slide"
     />
-    <Carousel.Caption>
-      <h3></h3>
-      <p></p>
-    </Carousel.Caption>
+
   </Carousel.Item>
   <Carousel.Item>
     <img
@@ -29,10 +26,7 @@ export default function Bootstrap_Carousel() {
       alt="Second slide"
     />
 
-    <Carousel.Caption>
-      <h3></h3>
-      <p></p>
-    </Carousel.Caption>
+
   </Carousel.Item>
   <Carousel.Item>
     <img
@@ -41,10 +35,7 @@ export default function Bootstrap_Carousel() {
       alt="Third slide"
     />
 
-    <Carousel.Caption>
-      <h3></h3>
-      <p></p>
-    </Carousel.Caption>
+
   </Carousel.Item>
 </Carousel>
 </div>

@@ -6,10 +6,6 @@ header {
     padding-left: 15px;
 }
 
-img {
-    padding-left: 10px;
-    max-height: 500px;
-}
 
 .logoboisJOMS {
     padding-left: 1px;
@@ -41,18 +37,31 @@ input[type=text], input[type=number], input[type=email], select, textarea {
       padding-top: 30px;
   }
 
- /* NAVBAR hakusanapalkki sivun oikealle puolelle mahdollisesti? //KESKEN// */
+ /* NAVBAR muokkauksia */
 
-
-
-    .FIXEDnavbar {
+    .FIXEDnavbarTOP {
         opacity: 90%;
         max-width: 650px;
-        float: right;
-        position:absolute;
         border-radius: 15px;
     }
     
+
+    .HakuOikealle {
+        float: right;
+    }
+
+    .navbarHAKU {
+        align-content: flex-end;
+    }
+
+    .navbarPadding {
+        padding-left: 230px;
+    }
+
+    .navbarReunat {
+        border-radius: 10px;
+        border-collapse: separate; 
+    }
 
 
   /* linkeistä alleviivaus pois ja sininen pois linkeistä */
@@ -68,18 +77,31 @@ input[type=text], input[type=number], input[type=email], select, textarea {
     padding-left: 15px;
   }
 
-  /* lisää muokkauksia mainoksille "karuselli" //KESKEN//  */
+  .paddingLisäys2 {
+      padding-top: 40px;
+      padding-bottom: 40px;
+  }
+
+  .paddingTilaa {
+      padding-right: 10px;
+      padding-left: 10px;
+  }
+
+
+  /* lisää muokkauksia mainoksille "karuselli"  */
 
   .mainosKokoa {
-      max-height: 1000px;
+      max-height: 1500px;
+      max-width: 1500px;
   }
 
   .marginLisäys {
       margin-left: 30px;
       margin-right: 30px;
-      margin-top: 30px;
       margin-bottom: 30px;
   }
+
+
 
   /* teksti keskelle diviä */
 
@@ -103,6 +125,19 @@ input[type=text], input[type=number], input[type=email], select, textarea {
 
     }
 
+    .korttiMarginLisäys {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+    .korttitaustaVäri {
+        background-color: black;
+    }
+
 /* Feedback */
 
 /* pibbels */
+
+/* Sami MURVINEN */
