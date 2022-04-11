@@ -41,7 +41,7 @@ const Bootstrap_Card = () => {
 
             <Card.Body>
             <Card.Link className='eiViiva' href="#">
-            <Card.Img variant="top"  src={card.image}/>
+            <Card.Img variant="top" src={card.image}/>
               <Card.Title>{card.title}</Card.Title>
               <Card.Text>
                 {card.text}

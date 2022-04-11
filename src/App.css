@@ -131,7 +131,7 @@ input[type=text], input[type=number], input[type=email], select, textarea {
     /* Korttien muokkaukset */
 
     .Kortti {
-        border-radius: 10px 10px 10px 10px;
+        border-radius: 5px;
         overflow: hidden;
     }
 
@@ -150,6 +150,8 @@ input[type=text], input[type=number], input[type=email], select, textarea {
     .korttitaustaVäri {
         background-color: white;
     }
+
+
 
 /* Feedback */
 

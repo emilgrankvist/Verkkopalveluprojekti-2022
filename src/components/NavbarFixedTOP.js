@@ -15,7 +15,7 @@ export default function NavbarFixedTOP() {
 <Container >
   <Navbar expand="lg" variant="light" bg="light">
       <Navbar.Brand href="#"><FontAwesomeIcon icon={faHome} /></Navbar.Brand>
-      <Navbar.Brand className='marginOikealle' href="#"><FontAwesomeIcon icon={faCartShopping} /></Navbar.Brand>
+      <Navbar.Brand className='marginOikealle' href="#"><FontAwesomeIcon icon={faCartShopping} />          0,00€</Navbar.Brand>
     <form>
       
     </form>

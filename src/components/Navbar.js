@@ -48,7 +48,7 @@ export default function Navbar({url}) {
        <Link className='navbar-link eiViiva paddingLisäys center' to="/">Etusivu</Link>
       </li>
       <li className="nav-item">
-        <Link className="navbar-link eiViiva paddingLisäys center" to="/products">Ota yhteyttä</Link>
+        <Link className="navbar-link eiViiva paddingLisäys center" to="/Feed">Ota yhteyttä</Link>
       </li>      
     </ul>
 

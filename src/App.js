@@ -9,8 +9,6 @@ import BootstrapCard from './components/Bootstrap_Card';
 import BootstrapCarousel from './components/Bootstrap_Carousel';
 import Home from './pages/Home';
 import Products from './pages/Products';
-import Computers from './pages/Computers';
-import Pheripals from './pages/Pheripals';
 import Feedback from './pages/Feedback';
 import NavbarFixedTOP from './components/NavbarFixedTOP';
 
@@ -24,12 +22,10 @@ function App() {
     <NavbarFixedTOP />
 
 
-     
-
     <div className='container'>
 
     <Header /> 
-    
+
     <Navbar url={URL}/>
  
     <BootstrapCarousel />
@@ -41,12 +37,11 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/Products/:categoryId" element={<Products url={URL}/>} />
-      <Route path="/Computers" element={<Computers />} />
-      <Route path="/Pheripals" element={<Pheripals />} />
-      <Route path="/Feedback" element={<Feedback />} />
+      <Route path="/Feedback/" element={<Feedback />} />
     </Routes>
 
     </div>
+
     <Footer />
 
     </>
