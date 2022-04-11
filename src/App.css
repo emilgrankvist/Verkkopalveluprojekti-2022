@@ -1,3 +1,16 @@
+/* VÄREJÄ 
+
+#A9C3F3
+#5085E7
+#1950B8
+#0D295E
+#0A162B
+
+
+
+*/
+
+
 a {
     padding: 10px;
 }
@@ -135,7 +148,7 @@ input[type=text], input[type=number], input[type=email], select, textarea {
       }
 
     .korttitaustaVäri {
-        background-color: rgb(168, 184, 217);
+        background-color: white;
     }
 
 /* Feedback */

@@ -24,11 +24,12 @@ function App() {
     <NavbarFixedTOP />
 
 
-    <Header />  
+     
 
     <div className='container'>
 
-
+    <Header /> 
+    
     <Navbar url={URL}/>
  
     <BootstrapCarousel />
