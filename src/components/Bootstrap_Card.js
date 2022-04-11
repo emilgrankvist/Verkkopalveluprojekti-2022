@@ -21,6 +21,14 @@ const Bootstrap_Card = () => {
         {   image: Tuote4, title: "PS4", text:"PlayStation", price:"200€"    },
         {   image: Tuote5, title: "PS1", text:"PlayStation", price:"150€"    },
         {   image: Tuote6, title: "Genesis", text:"Sega", price:"100€"    },
+        {   image: Tuote1, title: "Placeholder", text:"ayo", price:"99,99€"    },
+        {   image: Tuote1, title: "Placeholder", text:"ayo", price:"99,99€"    },
+        {   image: Tuote1, title: "Placeholder", text:"ayo", price:"99,99€"    },
+        {   image: Tuote1, title: "Placeholder", text:"ayo", price:"99,99€"    },
+        {   image: Tuote1, title: "Placeholder", text:"ayo", price:"99,99€"    },
+        {   image: Tuote1, title: "Placeholder", text:"ayo", price:"99,99€"    },
+        {   image: Tuote1, title: "Placeholder", text:"ayo", price:"99,99€"    },
+        {   image: Tuote1, title: "Placeholder", text:"ayo", price:"99,99€"    },
 
     ];
 
