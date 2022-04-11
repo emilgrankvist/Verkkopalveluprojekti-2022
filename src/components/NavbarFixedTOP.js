@@ -15,10 +15,9 @@ export default function NavbarFixedTOP() {
 <Container >
   <Navbar expand="lg" variant="light" bg="light">
       <Navbar.Brand href="#"><FontAwesomeIcon icon={faHome} /></Navbar.Brand>
-      <Navbar.Brand className='marginOikealle' href="#"><FontAwesomeIcon icon={faCartShopping} />          0,00€</Navbar.Brand>
-    <form>
-      
-    </form>
+      <Navbar.Brand href="#"><FontAwesomeIcon icon={faCartShopping} />         0,00€</Navbar.Brand>
+    
+
     <form className="d-flex navbarHAKU navbarPadding HakuOikealle">
         <input className="form-control me-2 " type="search" placeholder="Hakusana" aria-label="Search"/>
         <button className="btn btn-outline-primary" type="submit">Etsi</button>
