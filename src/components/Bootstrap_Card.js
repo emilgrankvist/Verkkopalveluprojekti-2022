@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card } from "react-bootstrap";
+import { Link } from 'react-router-dom';
+import { Card, Container } from "react-bootstrap";
 import { Button } from 'react-bootstrap';
 import Tuote1 from "../images/nes-nintendo.jpg";
 import Tuote2 from "../images/xbox-one.jpg";
@@ -29,6 +30,7 @@ const Bootstrap_Card = () => {
         {   image: Tuote1, title: "Placeholder", text:"ayo", price:"99,99€"    },
         {   image: Tuote1, title: "Placeholder", text:"ayo", price:"99,99€"    },
         {   image: Tuote1, title: "Placeholder", text:"ayo", price:"99,99€"    },
+        {   image: Tuote1, title: "Placeholder", text:"ayo", price:"99,99€"    },
 
     ];
 
@@ -36,14 +38,17 @@ const Bootstrap_Card = () => {
         return (
           
             <Card style={{ width: '14rem' }} key={index} className="Kortti paddingLisäys korttiMarginLisäys center">
-            <Card.Img variant="top"  src={card.image} />
-            <Card.Body className='cen'>
+
+            <Card.Body>
+            <Card.Link className='eiViiva' href="#">
+            <Card.Img variant="top"  src={card.image}/>
               <Card.Title>{card.title}</Card.Title>
               <Card.Text>
                 {card.text}
               </Card.Text>
-
-            <div >
+          
+              </Card.Link>
+           <div >
               <Button variant="primary">    <FontAwesomeIcon icon={faCartShopping} />   </Button>
               <Card.Text className='riviin'>
                   {card.price}
@@ -52,13 +57,16 @@ const Bootstrap_Card = () => {
 
             </Card.Body>
           </Card>
+          
         )
     }
 
     return (
-        <div className='center container korttitaustaVäri'>
+      <Container>
+        <div className='row center korttitaustaVäri'>
             {cardInfo.map(renderCard)}
         </div>
+        </Container>
     )
 
     
