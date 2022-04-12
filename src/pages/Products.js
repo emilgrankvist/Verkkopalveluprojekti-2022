@@ -10,11 +10,25 @@ export default function Products({ url,addToCart }) {
   let params = useParams();
 
   useEffect(() => {
-    axios.get(url + 'products/getproducts.php/' + params.categoryId)
+
+    let address = '';
+
+    if (params.searchPhrase === undefined) {
+      address = url + 'products/getproducts.php/' + params.categoryId;
+    } else {
+      address = url + 'products/searchproducts.php' + params.searchPhrase;
+    }
+
+    axios.get(address)
       .then((response) => {
         const json = response.data;
+        if (params.searchPhrase === undefined) {
         setCategoryName(json.category);
         setProducts(json.products);
+        } else {
+          setCategoryName(params.searchPhrase);
+          setProducts(json);
+        }
       }).catch(error => {
         alert(error.response === undefined ? error : error.response.data.error);
     })
@@ -29,6 +43,9 @@ export default function Products({ url,addToCart }) {
         </div>
       ))}
     </div>
-    
+  
+  
   )
+
+  
 }
