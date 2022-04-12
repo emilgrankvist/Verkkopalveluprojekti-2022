@@ -11,15 +11,24 @@ import Home from './pages/Home';
 import Products from './pages/Products';
 import Feedback from './pages/Feedback';
 import NavbarFixedTOP from './components/NavbarFixedTOP';
+import { useState } from 'react';
 
 
 const URL = 'http://localhost/verkkokauppabackend/';
 
 function App() {
+  const [cart, setCart] = useState([]);
+
+  function addToCart(product) {
+    const newCart = [...cart,product];
+    setCart(newCart);
+    localStorage.setItem('cart',JSON.stringify(newCart));
+  }
+
   return (
     <>
  
-    <NavbarFixedTOP />
+    <NavbarFixedTOP url={URL} cart={cart}/>
 
 
     <div className='container'>
@@ -36,7 +45,7 @@ function App() {
 
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/Products/:categoryId" element={<Products url={URL}/>} />
+      <Route path="/Products/:categoryId" element={<Products url={URL} addToCart={addToCart}/>} />
       <Route path="search/:searchPhrase" element={<Products url={URL}/>} />
       <Route path="/Feedback/" element={<Feedback />} />
     </Routes>

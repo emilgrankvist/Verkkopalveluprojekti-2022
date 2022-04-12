@@ -9,7 +9,7 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 
-export default function NavbarFixedTOP() {
+export default function NavbarFixedTOP({url,cart}) {
 
 const [categories,setCategories] = useState([]);
 const [search, setSearch] = useState('');

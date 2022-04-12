@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 
-export default function Products({ url }) {
+export default function Products({ url,addToCart }) {
   const [categoryName, setCategoryName] = useState('');
   const [products, setProducts] = useState([]);
 
