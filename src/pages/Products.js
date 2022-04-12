@@ -40,6 +40,7 @@ export default function Products({ url,addToCart }) {
         <div key={product.id}>
           {product.name}
           <div><img src={url + 'img/' +product.image} alt="Kuva tuotteelle"></img></div>
+          <button className='btn btn-primary' type='button' onClick={addToCart(product)}>Add to cart</button>
         </div>
       ))}
     </div>

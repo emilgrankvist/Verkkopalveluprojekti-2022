@@ -3,10 +3,10 @@ import { Navbar } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import React,{useState,useEffect} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import Cart from './Cart';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import Cart from '../components/Cart';
 
 
 export default function NavbarFixedTOP({url,cart}) {
@@ -31,7 +31,9 @@ function executeSearch(e) {
 <Container >
   <Navbar expand="lg" variant="light" bg="light">
       <Navbar.Brand href="#"><FontAwesomeIcon icon={faHome} /></Navbar.Brand>
-      <Navbar.Brand href="#"><FontAwesomeIcon icon={faCartShopping} />         0,00€</Navbar.Brand>
+      <Navbar.Brand href="#"><FontAwesomeIcon icon={faCartShopping} />
+      <Cart />
+      </Navbar.Brand>
     
 
     <form className="d-flex navbarHAKU navbarPadding HakuOikealle">
