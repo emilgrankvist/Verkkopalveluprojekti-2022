@@ -11,20 +11,9 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 export default function NavbarFixedTOP() {
 
-const [categories,setCategories] = useState([]);
 const [search, setSearch] = useState('');
 
 const navigate = useNavigate();
-
-useEffect(() => {
-  axios.get(url + 'products/getcategories.php')
-    .then((response) => {
-      const json = response.data;
-      setCategories(json);
-    }).catch (error => {
-        alert(error.response === undefined ? error : error.response.data.error);
-    })
-}, [])
 
 
 function executeSearch(e) {
@@ -52,7 +41,7 @@ function executeSearch(e) {
         onKeyPress={(e) => executeSearch(e)}
         className="form-control me-2 " 
         type="search" 
-        placeholder="Hakusana" 
+        placeholder="Search" 
         aria-label="Search">
 
         </input>
