@@ -46,12 +46,9 @@ function App() {
  
     <BootstrapCarousel />
 
-    <NavbarSuositus />
-    
-    <BootstrapCard />
 
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/Home/" element={<Home />}/>
       <Route path="/product/:productId" element={<Products url={URL}/>} />
       <Route path="/products/:categoryId" element={<Products url={URL} addToCart={addToCart}/>} />
       <Route path="/search/:searchPhrase" element={<Products url={URL}/>} />
