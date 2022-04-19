@@ -1,5 +1,6 @@
 import './App.css';
 
+import React, { useEffect } from 'react';
 import {Routes, Route} from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
@@ -18,6 +19,12 @@ const URL = 'http://localhost/verkkokauppabackend/';
 
 function App() {
   const [cart, setCart] = useState([]);
+
+  useEffect (() => {
+    if ('cart' in localStorage) {
+      setCart(JSON.parse(localStorage.getItem('cart')));
+    }
+  }, [])
 
   function addToCart(product) {
     const newCart = [...cart,product];

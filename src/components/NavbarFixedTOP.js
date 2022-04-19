@@ -15,6 +15,8 @@ const [search, setSearch] = useState('');
 
 const navigate = useNavigate();
 
+const [categories,setCategories] = useState ([]);
+
 
 function executeSearch(e) {
   if (e.charCode === 13) {
@@ -30,9 +32,8 @@ function executeSearch(e) {
 <Navbar className='fixed-top '/>
 <Container >
   <Navbar expand="lg" variant="light" bg="light">
-      <Navbar.Brand href="#"><FontAwesomeIcon icon={faHome} /></Navbar.Brand>
-      <Navbar.Brand href="#"><FontAwesomeIcon icon={faCartShopping} />
-      <Cart />
+      <Navbar.Brand href="#"><FontAwesomeIcon icon={faHome} />
+      <Cart cart={cart}><FontAwesomeIcon icon={faCartShopping}/> </Cart>
       </Navbar.Brand>
     
 
