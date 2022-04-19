@@ -32,7 +32,7 @@ function executeSearch(e) {
 <Navbar className='fixed-top '/>
 <Container >
   <Navbar expand="lg" variant="light" bg="light">
-      <Navbar.Brand href="#"><FontAwesomeIcon icon={faHome} />
+      <Navbar.Brand href="/Home"><FontAwesomeIcon icon={faHome} />
       <Cart cart={cart}><FontAwesomeIcon icon={faCartShopping}/> </Cart>
       </Navbar.Brand>
     
