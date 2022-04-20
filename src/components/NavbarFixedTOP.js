@@ -32,9 +32,11 @@ function executeSearch(e) {
 <Navbar className='fixed-top '/>
 <Container >
   <Navbar expand="lg" variant="light" bg="light">
-      <Navbar.Brand href="#"><FontAwesomeIcon icon={faHome} />
-      <Cart cart={cart}><FontAwesomeIcon icon={faCartShopping}/> </Cart>
-      </Navbar.Brand>
+      <Navbar.Brand href="/Home"><FontAwesomeIcon icon={faHome} />  </Navbar.Brand>
+      <Navbar.Brand cart={cart} href="/Ostoskori"> <FontAwesomeIcon icon={faCartShopping}/> </Navbar.Brand>
+       
+
+      
     
 
     <form className="d-flex navbarHAKU navbarPadding HakuOikealle">
