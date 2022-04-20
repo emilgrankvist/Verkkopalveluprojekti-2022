@@ -13,6 +13,7 @@ import Products from './pages/Products';
 import Feedback from './pages/Feedback';
 import NavbarFixedTOP from './components/NavbarFixedTOP';
 import { useState } from 'react';
+import Ostoskori from './pages/Ostoskori';
 
 
 const URL = 'http://localhost/verkkokauppabackend/';
@@ -51,6 +52,7 @@ function App() {
       <Route path="/Home/" element={<Home />}/>
       <Route path="/product/:productId" element={<Products url={URL} addToCart={addToCart}/>} />
       <Route path="/products/:categoryId" element={<Products url={URL} addToCart={addToCart}/>} />
+      <Route path="/Ostoskori" element={<Ostoskori cart={cart} />} />
       <Route path="/search/:searchPhrase" element={<Products url={URL}/>} />
       <Route path="/Feedback/" element={<Feedback />} />
     </Routes>
