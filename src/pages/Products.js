@@ -39,6 +39,8 @@ export default function Products({ url,addToCart }) {
       {products.map(product => (
         <div key={product.id}>
           {product.name}
+          <br></br>
+          {product.price} €
           <div><img src={url + 'img/' +product.image} alt="Kuva tuotteelle"></img></div>
           <button className='btn btn-primary' type='button' onClick={e => addToCart(product)}>Add to cart</button>
         </div>
