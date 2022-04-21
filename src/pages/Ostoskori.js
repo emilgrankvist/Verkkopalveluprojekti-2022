@@ -1,7 +1,7 @@
 import React from 'react';
 import uuid from 'react-uuid';
 
-export default function Ostoskori({cart}) {
+export default function Ostoskori({cart, removeFromCart}) {
     let sum = 0
 
     return (
@@ -15,7 +15,7 @@ export default function Ostoskori({cart}) {
                             <tr key={uuid()}>
                                 <td>{product.name}</td>
                                 <td>{product.price} €</td>
-                                <td></td>
+                                <td><a href="#" onClick={() => removeFromCart(product)}>Delete</a></td>
                             </tr>
                         )
                         })}

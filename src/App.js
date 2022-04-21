@@ -33,6 +33,12 @@ function App() {
     localStorage.setItem('cart',JSON.stringify(newCart));
   }
 
+  function removeFromCart(product) {
+    const itemsWihtoutRemoved = cart.filter(item => item.id !== product.id);
+    setCart(itemsWihtoutRemoved);
+    localStorage.setItem('cart', JSON.stringify(itemsWihtoutRemoved));
+  }
+
   return (
     <>
  
@@ -52,7 +58,7 @@ function App() {
       <Route path="/Home/" element={<Home />}/>
       <Route path="/product/:productId" element={<Products url={URL} addToCart={addToCart}/>} />
       <Route path="/products/:categoryId" element={<Products url={URL} addToCart={addToCart}/>} />
-      <Route path="/Ostoskori" element={<Ostoskori cart={cart} />} />
+      <Route path="/Ostoskori" element={<Ostoskori cart={cart} removeFromCart={removeFromCart} />} />
       <Route path="/search/:searchPhrase" element={<Products url={URL}/>} />
       <Route path="/Feedback/" element={<Feedback />} />
     </Routes>
