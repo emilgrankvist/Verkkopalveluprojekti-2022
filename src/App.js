@@ -28,9 +28,16 @@ function App() {
   }, [])
 
   function addToCart(product) {
+    if (cart.some(item => item.id === product.id)) {
+      const existingProduct = cart.filter(item => item.id === product.id);
+      updateAmount(parseInt(existingProduct[0].amount) +1,product);
+    }
+    else {
+      product['amount'] = 1;
     const newCart = [...cart,product];
     setCart(newCart);
     localStorage.setItem('cart',JSON.stringify(newCart));
+    }
   }
 
   function removeFromCart(product) {
@@ -38,7 +45,13 @@ function App() {
     setCart(itemsWihtoutRemoved);
     localStorage.setItem('cart', JSON.stringify(itemsWihtoutRemoved));
   }
-
+  function updateAmount(amount, product) {
+    product.amount = amount;
+    const index = cart.findIndex((item => item.id === product.id));
+    const modifiedCart = Object.assign([...cart],{[index]: product});
+    setCart(modifiedCart);
+    localStorage.setItem('cart',JSON.stringify(modifiedCart));
+  }
   return (
     <>
  
@@ -58,7 +71,7 @@ function App() {
       <Route path="/Home/" element={<Home />}/>
       <Route path="/product/:productId" element={<Products url={URL} addToCart={addToCart}/>} />
       <Route path="/products/:categoryId" element={<Products url={URL} addToCart={addToCart}/>} />
-      <Route path="/Ostoskori" element={<Ostoskori cart={cart} removeFromCart={removeFromCart} />} />
+      <Route path="/Ostoskori" element={<Ostoskori cart={cart} removeFromCart={removeFromCart} updateAmount={updateAmount} />} />
       <Route path="/search/:searchPhrase" element={<Products url={URL}/>} />
       <Route path="/Feedback/" element={<Feedback />} />
     </Routes>
