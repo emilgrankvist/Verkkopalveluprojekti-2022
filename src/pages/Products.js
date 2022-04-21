@@ -16,7 +16,7 @@ export default function Products({ url,addToCart }) {
     if (params.searchPhrase === undefined) {
       address = url + 'products/getproducts.php/' + params.categoryId;
     } else {
-      address = url + 'products/searchproducts.php' + params.searchPhrase;
+      address = url + 'products/searchproducts.php/' + params.searchPhrase;
     }
 
     axios.get(address)
