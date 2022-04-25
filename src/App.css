@@ -131,8 +131,8 @@ input[type=text], input[type=number], input[type=email], select, textarea {
     /* Korttien muokkaukset */
 
     .Kortti {
-        border-radius: 5px;
         overflow: hidden;
+        background-color: white;
     }
 
     .Kortti:hover{
@@ -151,8 +151,26 @@ input[type=text], input[type=number], input[type=email], select, textarea {
         background-color: white;
     }
 
+    .korttiIMG {
+        height: 100px;
+        width: 100px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
 
+    .korttiNAPPI {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-top: 10px;   
+        margin-bottom: 15px;    
+
+    }
+
+    .korttiHintaPadding {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 
 /* Feedback */
 
-/* Emil Pibbelskvist */
+/* Sami Karvinen OEHHH EHHKAEE KUOPIOOOOOO */

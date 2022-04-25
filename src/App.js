@@ -62,10 +62,11 @@ function App() {
 
     <Header /> 
 
+    
     <Navbar url={URL}/>
  
    
-
+    
 
     <Routes>
       <Route path="/Home/" element={<Home />}/>
