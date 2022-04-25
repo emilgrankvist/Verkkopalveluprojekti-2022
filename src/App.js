@@ -14,6 +14,7 @@ import Feedback from './pages/Feedback';
 import NavbarFixedTOP from './components/NavbarFixedTOP';
 import { useState } from 'react';
 import Ostoskori from './pages/Ostoskori';
+import Manage from './pages/Manage';
 
 
 const URL = 'http://localhost/verkkokauppabackend/';
@@ -62,18 +63,20 @@ function App() {
 
     <Header /> 
 
-    <Navbar url={URL}/>
+    <Navbar url={URL} />
+
  
    
 
 
     <Routes>
-      <Route path="/Home/" element={<Home />}/>
-      <Route path="/product/:productId" element={<Products url={URL} addToCart={addToCart}/>} />
-      <Route path="/products/:categoryId" element={<Products url={URL} addToCart={addToCart}/>} />
+      <Route path="/Home/" element={<Home />} />
+      <Route path="/product/:productId" element={<Products url={URL} addToCart={addToCart} />} />
+      <Route path="/products/:categoryId" element={<Products url={URL} addToCart={addToCart} />} />
       <Route path="/Ostoskori" element={<Ostoskori cart={cart} removeFromCart={removeFromCart} updateAmount={updateAmount} />} />
       <Route path="/search/:searchPhrase" element={<Products url={URL}/>} />
       <Route path="/Feedback/" element={<Feedback />} />
+      <Route path="/Manage/" element={<Manage />} />
     </Routes>
 
     </div>
