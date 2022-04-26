@@ -13,6 +13,7 @@ export default function CategoryList({url,selectedCategory,setSelectedCategory})
                     setSelectedCategory(json[0]);
                 }
                 setCategories(json);
+                console.log(json)
             }
         }).catch (error => {
             alert(error.response === undefined ? error : error.response.data.error);

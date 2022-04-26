@@ -39,7 +39,7 @@ export default function Products({ url,addToCart }) {
     <div className='container'>
     <div className='row korttitaustaVäri'>
       <div></div>
-      <h3>Category {categoryName}</h3>
+      <h3>{categoryName}</h3>
       {products.map(product => (
         <div key={product.id} style={{ width: '14rem' }} className="Kortti paddingLisäys korttiMarginLisäys card korttiNAPPI">
           {product.name}

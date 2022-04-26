@@ -19,6 +19,16 @@ header {
     padding-left: 15px;
 }
 
+h3 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 30px;
+}
+
+h4 {
+    padding-top: 4px;
+    padding-bottom: 3px;
+}
 
 .logoboisJOMS {
     padding-left: 1px;

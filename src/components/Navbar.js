@@ -51,7 +51,7 @@ export default function Navbar({url}) {
         <Link className="navbar-link eiViiva paddingLisäys center" to="/Feedback">Ota yhteyttä</Link>
       </li>
       <li className="nav-item">
-        <Link className="navbar-link eiViiva paddingLisäys center" to="/Manage">TESTI</Link>
+        <Link className="navbar-link eiViiva paddingLisäys center" to="/Manage">Lisää kategoria</Link>
       </li>
     </ul>
 
