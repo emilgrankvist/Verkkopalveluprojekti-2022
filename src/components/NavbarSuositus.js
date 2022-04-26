@@ -13,7 +13,7 @@ export default function NavbarSuositus() {
 <Navbar className='fixed-top '/>
 
 <Navbar expand="lg" variant="light" bg="light">
-    <h3><FontAwesomeIcon className='paddingTilaa' icon={faGamepad}></FontAwesomeIcon> Jomm's Suosittelee</h3>
+    <h4><FontAwesomeIcon className='paddingTilaa' icon={faGamepad}></FontAwesomeIcon> Jomm's Suosittelee</h4>
 </Navbar>
 
 </div>
