@@ -27,29 +27,29 @@ export default function ManageCategories({url}) {
     if (!addingCategory){
         return (
           <>
-          <h3>Manage categories</h3>
+          <h3>Hallinnoi kategorioita</h3>
           <div>
-            <label>Category</label>
+            <label>Kategoriat</label>
             <CategoryList
               url={url}
               selectedCategory={selectedCategory}
               setSelectedCategory={setSelectedCategory}
               />
-              <button className="btn btn dark" type="button" onClick={() => setAddingCategory(true)}>Add</button>
+              <button className="btn btn dark" type="button" onClick={() => setAddingCategory(true)}>Lisää</button>
           </div>
           </>
         )
       } else {
         return (
           <>
-          <h3>Add new category</h3>
+          <h3>Lisää uusi kategoria</h3>
           <form onSubmit={saveCategory}>
           <div>
-            <label>Category name</label>
+            <label>Kategorian nimi</label>
             <input type="text" value={newCategory} onChange={(e) => setNewCategory(e.target.value)}/>
           </div>
-          <button type="button" onClick={() => setAddingCategory(false)}>Cancel</button>
-          <button type="submit">Save</button>
+          <button type="button" onClick={() => setAddingCategory(false)}>Peru</button>
+          <button type="submit">Tallenna</button>
           </form>
           </>
         )
