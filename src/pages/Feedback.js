@@ -1,46 +1,49 @@
-import React from 'react'
-import { useState } from 'react';
-import axios, { Axios } from 'axios';
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 
 export default function Feedback() {
 
-    const [inputs, setInputs] = useState({})
+  const [firstName, setFirstName] = useState({})
+  const [lastName, setLastName] = useState({})
+  const [phone, setPhone] = useState({})
+  const [email, setEmail] = useState({})
+  const [message, setMessage] = useState({})
 
-    const handleChange = (event) => {
-        const name = event.target.name;
-        const value = event.target.value;
-        setInputs(values => ({...values, [name]: value}));
+const handleSubmit = (e) => {
+  e.preventDefault();
+  const json = JSON.stringify({firstName: firstName, lastName: lastName, phone: phone, email: email, message: message});
+  
+  axios.post('http://localhost/verkkokauppabackend/feedback/feedback.php', json, {
+    headers: {
+      'Content-Type' : 'application/json'
     }
+    
+  })
+}
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-
-        axios.post('http://localhost/verkkokauppabackend/feedback.php', inputs)
-
-        console.log(inputs)
-    }
     return (
-        
-            <div className="container">
+        <div className="container">
     <h1>Anna palautetta ja/tai ota meihin yhteyttä</h1>
-  <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
     <label for="Etunimi">Etunimi: </label>
-    <input type="text" name="firstName" id='firstName' required onChange={handleChange}></input><br></br>
+    <input type="text" name="firstName" id='firstName' required onChange={(e) => setFirstName(e.target.value)}></input><br></br>
 
     <label for="Sukunimi">Sukunimi: </label>
-    <input type="text" name="lastName" id='lastName' required onChange={handleChange}></input><br></br>
+    <input type="text" name="lastName" id='lastName' required onChange={(e) => setLastName(e.target.value)}></input><br></br>
 
     <label for="puhelin">Puhelin: </label>
-    <input type="number" name="phone" id='phone' required onChange={handleChange}></input><br></br>
+    <input type="number" name="phone" id='phone' required onChange={(e) => setPhone(e.target.value)}></input><br></br>
 
     <label for="sähköposti">Sähköposti: </label>
-    <input type="email" name="email" id='email' required onChange={handleChange}></input><br></br>
+    <input type="email" name="email" id='email' required onChange={(e) => setEmail(e.target.value)}></input><br></br>
 
     <label for="viesti">Viesti: </label>
-    <input type="text" name="message" id="message" required onChange={handleChange}></input><br></br>
+    <input type="text" name="message" id="message" required onChange={(e) => setMessage(e.target.value)}></input><br></br>
 
     <input type="submit" value="Lähetä"></input>
   </form>
-</div>
-    );      
-}
+
+ </div>
+    )
+    }
