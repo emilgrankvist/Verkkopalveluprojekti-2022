@@ -10,10 +10,10 @@ export default function CategoryList({url,selectedCategory,setSelectedCategory})
             const json = response.data;
             if (json) {
                 if(selectedCategory === null) {
-                    setSelectedCategory(json[0]);
+                    setSelectedCategory(json[1]);
                 }
                 setCategories(json);
-                console.log(json)
+
             }
         }).catch (error => {
             alert(error.response === undefined ? error : error.response.data.error);
@@ -21,7 +21,8 @@ export default function CategoryList({url,selectedCategory,setSelectedCategory})
     }, [selectedCategory])
 
     function onCategoryChange(value) {
-        setSelectedCategory(categories.filter(item => item.id === value));
+        setSelectedCategory(categories.filter(item => item.id === parseInt(value))[0]);
+        
     }
 
     return (
