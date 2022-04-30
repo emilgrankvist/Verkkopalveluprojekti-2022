@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
 import uuid from 'react-uuid';
 import { useEffect } from 'react';
-export default function Ostoskori({cart, removeFromCart, updateAmount}) {
+import axios from 'axios';
+
+export default function Ostoskori({cart, removeFromCart, updateAmount, url}) {
     const [inputs,_] = useState([]);
-     const [inputIndex,setInputIndex] = useState(-1);
+    const [inputIndex,setInputIndex] = useState(-1);
+    const [firstname,setFirstname] = useState('');
+    const [lastname,setLastname] = useState('');
+    const [address,setAddress] = useState('');
+    const [zip,setZip] = useState('');
+    const [city,setCity] = useState('');
+    const [finished,setFinished] = useState ([false]);
     let sum = 0
 
     function changeAmount(e,product,index) {
@@ -22,14 +30,36 @@ export default function Ostoskori({cart, removeFromCart, updateAmount}) {
         }
     },[cart])
       
-    
+    function order(e) {
+        e.preventDefault();
+        const json = JSON.stringify({
+            firstname: firstname,
+            lastname: lastname,
+            address: address,
+            zip: zip,
+            city: city,
+            cart: cart,
+        });
+        axios.post(url + 'order/order.php',json,{
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type' : 'application/json'
+            }
+        })
+        .then(() => {
+            React.empty();
+            setFinished(true);
+        }).catch(error => {
+            alert(error.response === undefined ? error: error.response.data.error);
+        });
+    }
     return (
         <div>
             <h3 className="header">Items in cart</h3>
             <table className="table">
                 <tbody>
                     {cart.map((product, index) => {
-                        sum+=parseFloat(product.price);
+                        sum+=parseFloat(product.price) * parseInt(product.amount);
                         return (
                             <tr key={uuid()}>
                                 <td>{product.name}</td>
@@ -48,6 +78,35 @@ export default function Ostoskori({cart, removeFromCart, updateAmount}) {
                     </tr>
                 </tbody>
             </table>
+
+            {cart.length > 0 &&
+            <>
+            <h2>Asiakastiedot</h2>
+            <form onSubmit={order}>
+                <div className='form-group'>
+                    <label>Etunimi:</label>
+                    <input className="form-control" onChange={e => setFirstname(e.target.value)}></input>
+                </div>
+                <div className='form-group'>
+                    <label>Sukunimi:</label>
+                    <input className="form-control" onChange={e => setLastname(e.target.value)}></input>
+                </div>
+                <div className='form-group'>
+                    <label>Osoite:</label>
+                    <input className="form-control" onChange={e => setAddress(e.target.value)}></input>
+                </div>
+                <div className='form-group'>
+                    <label>Postinumero:</label>
+                    <input className="form-control" onChange={e => setZip(e.target.value)}></input>
+                </div>
+                <div className='form-group'>
+                    <label>Postitoimipaikka:</label>
+                    <input className="form-control" onChange={e => setCity(e.target.value)}></input>
+                </div>
+                <button type="button" class="btn btn-primary">Vahvista tilaus</button>
+            </form>
+            </>
+            }
         </div>
     )
 }

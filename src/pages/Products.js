@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import BootstrapCard from '../components/Bootstrap_Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
@@ -37,24 +36,28 @@ export default function Products({ url,addToCart }) {
     })
   }, [params])
   return (
-    <div>
-      <h3>Category {categoryName}</h3>
-
-      
+    <div className='container'>
+    <div className='row korttitaustaVäri'>
+      <div></div>
+      <h3>{categoryName}</h3>
       {products.map(product => (
-
-        
-        <div key={product.id}>
+        <div key={product.id} style={{ width: '14rem' }} className="Kortti paddingLisäys korttiMarginLisäys card korttiNAPPI">
           {product.name}
-          <br></br>
+          <div>
+          <div><img src={url + 'img/' +product.image} alt="Kuva tuotteelle" className='korttiIMG'></img></div>
+          <button className='btn btn-primary korttiHintaPadding ' type='button' onClick={e => addToCart(product)}> <FontAwesomeIcon icon={faCartShopping} /> </button>  
           {product.price} €
-          <div><img src={url + 'img/' +product.image} alt="Kuva tuotteelle"></img></div>
-          <button className='btn btn-primary' type='button' onClick={e => addToCart(product)}>Add to cart</button>
+          
+          </div>
+         
         </div>
+      
+      
 
-        
       ))}
     </div>
+    </div>
+
   
   
   )
