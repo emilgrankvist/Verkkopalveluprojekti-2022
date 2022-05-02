@@ -43,7 +43,7 @@ export default function Ostoskori({cart, removeFromCart, updateAmount, url}) {
             city: city,
             cart: cart,
         });
-        axios.post(url + 'order/order.php',json,{
+        axios.post(URL + 'order/order.php',json,{
             headers: {
                 'Accept': 'application/json',
                 'Content-Type' : 'application/json'
