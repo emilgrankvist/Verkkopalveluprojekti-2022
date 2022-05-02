@@ -3,9 +3,9 @@ import uuid from 'react-uuid';
 import { useEffect } from 'react';
 import axios from 'axios';
 
-const URL = 'http://localhost/verkkokauppabackend/';
 
-export default function Ostoskori({cart, removeFromCart, updateAmount, url}) {
+
+export default function Ostoskori({cart, removeFromCart, updateAmount, empty}) {
     const [inputs,_] = useState([]);
     const [inputIndex,setInputIndex] = useState(-1);
     const [firstname,setFirstname] = useState('');
@@ -13,7 +13,11 @@ export default function Ostoskori({cart, removeFromCart, updateAmount, url}) {
     const [address,setAddress] = useState('');
     const [zip,setZip] = useState('');
     const [city,setCity] = useState('');
+    const [product,setProduct] = useState ('');
     const [finished,setFinished] = useState (false);
+
+    const URL = 'http://localhost/verkkokauppabackend/';
+
     let sum = 0
 
     useEffect(() => {
@@ -33,6 +37,7 @@ export default function Ostoskori({cart, removeFromCart, updateAmount, url}) {
         }
     },[cart])
       
+     
     function order(e) {
         e.preventDefault();
         const json = JSON.stringify({
@@ -41,8 +46,10 @@ export default function Ostoskori({cart, removeFromCart, updateAmount, url}) {
             address: address,
             zip: zip,
             city: city,
+            product: product.amount,
             cart: cart,
-        });
+            
+            });
         axios.post(URL + 'order/order.php',json,{
             headers: {
                 'Accept': 'application/json',
@@ -50,7 +57,7 @@ export default function Ostoskori({cart, removeFromCart, updateAmount, url}) {
             }
         })
         .then(() => {
-            React.empty();
+            empty();
             setFinished(true);
         }).catch(error => {
             alert(error.response === undefined ? error: error.response.data.error);
@@ -59,7 +66,7 @@ export default function Ostoskori({cart, removeFromCart, updateAmount, url}) {
     if (finished === false ) {
     return (
         <div className='taustaVari'>
-            <h3 className="header">Items in cart</h3>
+            <h3 className="header">Ostoskorisi</h3>
             <table className="table">
                 <tbody>
                     {cart.map((product, index) => {
@@ -69,7 +76,7 @@ export default function Ostoskori({cart, removeFromCart, updateAmount, url}) {
                                 <td>{product.name}</td>
                                 <td>{product.price} €</td>
                                 <td>
-                                    <input ref={inputs[index]} type="number" min="1" style={{width: '70px'}} class="OstoskoriNappi" value={product.amount} onChange={e => changeAmount(e,product,index)} />
+                                    <input ref={inputs[index]} type="number" min="1" style={{width: '70px'}} className="OstoskoriNappi" value={product.amount} onChange={e => changeAmount(e,product,index)} />
                                 </td>
                                 <td><a href="#" onClick={() => removeFromCart(product)}>Delete</a></td>
                             </tr>
