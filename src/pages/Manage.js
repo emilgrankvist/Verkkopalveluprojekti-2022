@@ -6,7 +6,7 @@ const URL = 'http://localhost/verkkokauppabackend/';
 
 export default function Manage() {
     return (
-        <div>
+        <div className='taustaVari'>
             <ManageCategories url={URL} />
             <ManageProducts url={URL} />
         </div>

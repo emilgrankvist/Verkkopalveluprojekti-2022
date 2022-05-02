@@ -58,7 +58,7 @@ export default function Ostoskori({cart, removeFromCart, updateAmount, url}) {
     }
     if (finished === false ) {
     return (
-        <div>
+        <div className='taustaVari'>
             <h3 className="header">Items in cart</h3>
             <table className="table">
                 <tbody>

@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import Cart from "../components/Cart";
 
 
 export default function NavbarFixedTOP({url,cart}) {
@@ -14,6 +15,7 @@ const [search, setSearch] = useState('');
 const navigate = useNavigate();
 
 const [categories,setCategories] = useState ([]);
+
 
 
 function executeSearch(e) {
@@ -28,16 +30,24 @@ function executeSearch(e) {
     return (
 <div className='fixed-top FIXEDnavbarTOP ms-auto ' >
 <Navbar className='fixed-top '/>
-<Container >
-  <Navbar expand="lg" variant="light" bg="light">
+<Container className="col">
+  <Navbar className='FIXEDnavbarTOP' expand="lg" variant="light" bg="light">
       <Navbar.Brand href="/Home"><FontAwesomeIcon icon={faHome} />  </Navbar.Brand>
-      <Navbar.Brand cart={cart} href="/Ostoskori"> <FontAwesomeIcon icon={faCartShopping}/> </Navbar.Brand>
+      
+      
+      <Navbar.Brand cart={cart} href="/Ostoskori"> 
+      
+      <FontAwesomeIcon icon={faCartShopping}/>  
+
+ 
+      
+      </Navbar.Brand>
        
 
       
     
 
-    <form className="d-flex navbarHAKU navbarPadding HakuOikealle">
+    <form className="d-flex navbarHAKU  ms-auto navBarhakuPAD">
         <input 
         value={search}
         onChange={(e) => setSearch(e.target.value)}
@@ -51,6 +61,7 @@ function executeSearch(e) {
         <button className="btn btn-outline-primary" type="submit">Etsi</button>
       </form>
   </Navbar>
+
 </Container>
 </div>
     )

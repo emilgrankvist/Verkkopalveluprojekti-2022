@@ -1,15 +1,8 @@
-/* VÄREJÄ 
+/* tässä css lauseet jotka vaikuttavat kaikkialle */
 
-#A9C3F3
-#5085E7
-#1950B8
-#0D295E
-#0A162B
-
-
-
-*/
-
+#grad {
+    background-image: linear-gradient(to right, red , yellow);
+  }
 
 a {
     padding: 10px;
@@ -28,10 +21,25 @@ h3 {
 h4 {
     padding-top: 4px;
     padding-bottom: 3px;
+    
 }
 
 .logoboisJOMS {
     padding-left: 1px;
+}
+
+label {
+    padding-top: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+
+}
+button {
+    margin: 10px;
+}
+input {
+  margin: 20px;
 }
 
 
@@ -60,17 +68,33 @@ input[type=text], input[type=number], input[type=email], select, textarea {
       padding-top: 30px;
   }
 
+  .lahetaNappi {
+      margin-bottom: 20px;
+      margin-top: 10px;
+  }
+  .manageNapit {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
  /* NAVBAR muokkauksia */
 
     .FIXEDnavbarTOP {
         opacity: 90%;
         max-width: 650px;
-        border-radius: 15px;
+        border-radius: 5px;
+        padding-left: 10px;
     }
     
+    .listaNappi {
+        margin-left: 10px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
 
-    .HakuOikealle {
-        float: right;
+    .navBarhakuPAD {
+        padding-right: 10px;
     }
 
     .navbarHAKU {
@@ -86,6 +110,12 @@ input[type=text], input[type=number], input[type=email], select, textarea {
         border-collapse: separate; 
     }
 
+
+    /* Taustaväri sivuille esim lomake */
+
+    .taustaVari {
+        background-color: white;
+    }
 
   /* linkeistä alleviivaus pois ja sininen pois linkeistä */
   .eiViiva {
@@ -180,6 +210,21 @@ input[type=text], input[type=number], input[type=email], select, textarea {
         margin-left: 10px;
         margin-right: 10px;
     }
+
+
+/* Footer muokkaukset */
+
+.footerVari {
+    color: rgb(255, 255, 255);
+}
+.footerHome:hover {
+    color: rgb(30, 99, 177);
+}
+.footerHome {
+    text-decoration: none;
+}
+
+
 
 /* Feedback */
 

@@ -35,7 +35,7 @@ export default function ManageCategories({url}) {
               selectedCategory={selectedCategory}
               setSelectedCategory={setSelectedCategory}
               />
-              <button className="btn btn-dark" type="button" onClick={() => setAddingCategory(true)}>Lisää</button>
+              <button className="btn btn-dark manageNapit" type="button" onClick={() => setAddingCategory(true)}>Lisää</button>
           </div>
           </>
         )
@@ -48,8 +48,8 @@ export default function ManageCategories({url}) {
             <label>Kategorian nimi</label>
             <input type="text" value={newCategory} onChange={(e) => setNewCategory(e.target.value)}/>
           </div>
-          <button type="button" onClick={() => setAddingCategory(false)}>Peru</button>
-          <button type="submit">Tallenna</button>
+          <button type="button" className='manageNapit' onClick={() => setAddingCategory(false)}>Peru</button>
+          <button type="submit" className='manageNapit'>Tallenna</button>
           </form>
           </>
         )
