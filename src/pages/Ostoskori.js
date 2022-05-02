@@ -13,18 +13,19 @@ export default function Ostoskori({cart, removeFromCart, updateAmount, url}) {
     const [address,setAddress] = useState('');
     const [zip,setZip] = useState('');
     const [city,setCity] = useState('');
-    const [finished,setFinished] = useState ([false]);
+    const [finished,setFinished] = useState (false);
     let sum = 0
 
-    function changeAmount(e,product,index) {
-        updateAmount(e.target.value,product);
-        setInputIndex(index);
-    }
     useEffect(() => {
       for (let i = 0;i<cart.length;i++) {
           inputs[i] = React.createRef();
       }
-    }, [cart.length])
+    }, [cart.length,inputs])
+    
+    function changeAmount(e,product,index) {
+        updateAmount(e.target.value,product);
+        setInputIndex(index);
+    }
     
     useEffect(() => {
         if (inputs.length > 0 && inputIndex > -1 && inputs[inputIndex].current !== null) {
@@ -42,7 +43,7 @@ export default function Ostoskori({cart, removeFromCart, updateAmount, url}) {
             city: city,
             cart: cart,
         });
-        axios.post(URL + 'order/order.php',json,{
+        axios.post(url + 'order/order.php',json,{
             headers: {
                 'Accept': 'application/json',
                 'Content-Type' : 'application/json'
@@ -55,6 +56,7 @@ export default function Ostoskori({cart, removeFromCart, updateAmount, url}) {
             alert(error.response === undefined ? error: error.response.data.error);
         });
     }
+    if (finished === false ) {
     return (
         <div>
             <h3 className="header">Items in cart</h3>
@@ -111,4 +113,7 @@ export default function Ostoskori({cart, removeFromCart, updateAmount, url}) {
             }
         </div>
     )
+        } else {
+            return (<h3>Kiitos tilauksestasi!</h3>)
+        }
 }
