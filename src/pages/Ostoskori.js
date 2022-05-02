@@ -3,6 +3,8 @@ import uuid from 'react-uuid';
 import { useEffect } from 'react';
 import axios from 'axios';
 
+const URL = 'http://localhost/verkkokauppabackend/';
+
 export default function Ostoskori({cart, removeFromCart, updateAmount, url}) {
     const [inputs,_] = useState([]);
     const [inputIndex,setInputIndex] = useState(-1);
@@ -40,7 +42,7 @@ export default function Ostoskori({cart, removeFromCart, updateAmount, url}) {
             city: city,
             cart: cart,
         });
-        axios.post(url + 'order/order.php',json,{
+        axios.post(URL + 'order/order.php',json,{
             headers: {
                 'Accept': 'application/json',
                 'Content-Type' : 'application/json'
@@ -103,7 +105,7 @@ export default function Ostoskori({cart, removeFromCart, updateAmount, url}) {
                     <label>Postitoimipaikka:</label>
                     <input className="form-control" onChange={e => setCity(e.target.value)}></input>
                 </div>
-                <button type="button" class="btn btn-primary">Vahvista tilaus</button>
+                <button type="submit" class="btn btn-primary">Vahvista tilaus</button>
             </form>
             </>
             }
