@@ -17,7 +17,6 @@ export default function ManageProducts({ url }) {
                     const json = response.data;
                     if (json) {
                         setProducts(json.products);
-                        console.log(json)
                     }
                 }).catch(error => {
                     alert(error.response === undefined ? error : error.response.data.error);
@@ -27,7 +26,7 @@ export default function ManageProducts({ url }) {
 
     function saveProduct(e) {
         e.preventDefault();
-        const json = JSON.stringify({ name: productName, price: price, categoryid: selectedCategory })
+        const json = JSON.stringify({ name: productName, price: price, categoryid: selectedCategory.id })
         axios.post(url + 'products/addproduct.php', json, {
             headers: {
                 'Content-Type': 'application/json'
