@@ -36,12 +36,12 @@ export default function Home({ url,addToCart }) {
 
 
 
-    return (
-        <div>
-             <BootstrapCarousel />
+  return (
+    <div>
 
-            <NavbarSuositus />
+      <BootstrapCarousel />
 
+      <NavbarSuositus />
 
           <div className='container '>
           <div className='row korttitaustaVäri center korttiYläPadding'>

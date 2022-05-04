@@ -5,9 +5,6 @@ import {Routes, Route} from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import NavbarSuositus from './components/NavbarSuositus';
-import BootstrapCard from './components/Bootstrap_Card';
-import BootstrapCarousel from './components/Bootstrap_Carousel';
 import Home from './pages/Home';
 import Products from './pages/Products';
 import Feedback from './pages/Feedback';
@@ -15,7 +12,6 @@ import NavbarFixedTOP from './components/NavbarFixedTOP';
 import { useState } from 'react';
 import Ostoskori from './pages/Ostoskori';
 import Manage from './pages/Manage';
-import CategoryList from './components/CategoryList';
 
 
 const URL = 'http://localhost/verkkokauppabackend/';
@@ -64,16 +60,11 @@ function App() {
  
     <NavbarFixedTOP url={URL} cart={cart} />
 
-
     <div className='container'>
 
     <Header /> 
 
     <Navbar url={URL} />
-
-    
-   
-    
 
     <Routes>
       <Route path="/Home/" element={<Home url={URL} addToCart={addToCart}/>} />
@@ -90,13 +81,6 @@ function App() {
     <Footer />
 
     </>
-  
-  
   );
-
-
 }
-
-
-
 export default App;

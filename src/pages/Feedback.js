@@ -1,6 +1,5 @@
-import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 export default function Feedback() {
 
@@ -11,6 +10,9 @@ export default function Feedback() {
   const [message, setMessage] = useState({})
 
 const handleSubmit = (e) => {
+
+  e.target.reset();
+
   e.preventDefault();
   const json = JSON.stringify({firstName: firstName, lastName: lastName, phone: phone, email: email, message: message});
   
@@ -45,5 +47,5 @@ const handleSubmit = (e) => {
   </form>
 
  </div>
-    )
-    }
+)
+}

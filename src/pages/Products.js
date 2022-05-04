@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
@@ -49,20 +49,10 @@ export default function Products({ url,addToCart }) {
           <FontAwesomeIcon icon={faCartShopping} /> 
           </button>  
           {product.price} €
-          
           </div>
-         
         </div>
-      
-      
-
       ))}
     </div>
     </div>
-
-  
-  
   )
-
-  
 }
