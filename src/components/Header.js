@@ -6,7 +6,7 @@ function Images() {
 
   return (
     <div>
-      <img className='logoboisJOMS' src={logo} />
+      <img className='logoboisJOMS' src={logo}  />
     </div>
   )
 }

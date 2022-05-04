@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import uuid from 'react-uuid';
 import { useEffect } from 'react';
 import axios from 'axios';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 
 export default function Ostoskori({cart, removeFromCart, updateAmount, empty}) {
@@ -78,7 +79,7 @@ export default function Ostoskori({cart, removeFromCart, updateAmount, empty}) {
                                 <td>
                                     <input ref={inputs[index]} type="number" min="1" style={{width: '70px'}} className="OstoskoriNappi" value={product.amount} onChange={e => changeAmount(e,product,index)} />
                                 </td>
-                                <td><a href="#" onClick={() => removeFromCart(product)}>Delete</a></td>
+                                <td><a href="#" onClick={() => removeFromCart(product)}><FontAwesomeIcon icon={faTrash} /> </a></td>
                             </tr>
                         )
                         })}
@@ -92,9 +93,9 @@ export default function Ostoskori({cart, removeFromCart, updateAmount, empty}) {
 
             {cart.length > 0 &&
             <>
-            <h2>Asiakastiedot</h2>
-            <form onSubmit={order}>
-                <div className='form-group'>
+            <h3>Asiakastiedot</h3>
+            <form onSubmit={order} className="container">
+                <div className='form-group '>
                     <label>Etunimi:</label>
                     <input className="form-control" onChange={e => setFirstname(e.target.value)}></input>
                 </div>
@@ -114,13 +115,17 @@ export default function Ostoskori({cart, removeFromCart, updateAmount, empty}) {
                     <label>Postitoimipaikka:</label>
                     <input className="form-control" onChange={e => setCity(e.target.value)}></input>
                 </div>
-                <button type="submit" class="btn btn-primary">Vahvista tilaus</button>
+                <button type="submit" class="btn btn-primary manageNapit">Vahvista tilaus</button>
             </form>
             </>
             }
         </div>
     )
         } else {
-            return (<h3>Kiitos tilauksestasi!</h3>)
+            return (
+            <div className='taustaVari'>
+            <h3>Kiitos tilauksestasi!</h3>
+            </div>
+            )
         }
 }
