@@ -38,7 +38,7 @@ export default function Ostoskori({cart, removeFromCart, updateAmount, empty}) {
         }
     },[cart])
       
-     
+
     function order(e) {
         e.preventDefault();
         const json = JSON.stringify({

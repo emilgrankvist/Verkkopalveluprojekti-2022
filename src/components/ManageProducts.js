@@ -41,9 +41,6 @@ export default function ManageProducts({ url }) {
             })
     }
 
-
-
-
     if (!addingProduct) {
         return (
             <>

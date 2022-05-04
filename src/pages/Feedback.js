@@ -1,6 +1,5 @@
-import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 export default function Feedback() {
 
@@ -45,5 +44,5 @@ const handleSubmit = (e) => {
   </form>
 
  </div>
-    )
-    }
+)
+}

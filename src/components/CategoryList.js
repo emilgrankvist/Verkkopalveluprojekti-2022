@@ -22,7 +22,6 @@ export default function CategoryList({url,selectedCategory,setSelectedCategory})
 
     function onCategoryChange(value) {
         setSelectedCategory(categories.filter(item => item.id === parseInt(value))[0]);
-        
     }
 
     return (
@@ -33,4 +32,3 @@ export default function CategoryList({url,selectedCategory,setSelectedCategory})
         </select>
     )
 }
-
