@@ -5,9 +5,6 @@ import {Routes, Route} from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import NavbarSuositus from './components/NavbarSuositus';
-import BootstrapCard from './components/Bootstrap_Card';
-import BootstrapCarousel from './components/Bootstrap_Carousel';
 import Home from './pages/Home';
 import Products from './pages/Products';
 import Feedback from './pages/Feedback';
@@ -53,11 +50,15 @@ function App() {
     setCart(modifiedCart);
     localStorage.setItem('cart',JSON.stringify(modifiedCart));
   }
+  function emptyCart() {
+    setCart([]);
+    localStorage.removeItem('cart');
+    }
+  
   return (
     <>
  
-    <NavbarFixedTOP url={URL} cart={cart}/>
-
+    <NavbarFixedTOP url={URL} cart={cart} />
 
     <div className='container'>
 
@@ -65,15 +66,11 @@ function App() {
 
     <Navbar url={URL} />
 
- 
-   
-    
-
     <Routes>
-      <Route path="/Home/" element={<Home />} />
+      <Route path="/Home/" element={<Home url={URL} addToCart={addToCart}/>} />
       <Route path="/product/:productId" element={<Products url={URL} addToCart={addToCart} />} />
       <Route path="/products/:categoryId" element={<Products url={URL} addToCart={addToCart} />} />
-      <Route path="/Ostoskori" element={<Ostoskori cart={cart} removeFromCart={removeFromCart} updateAmount={updateAmount} />} />
+      <Route path="/Ostoskori" element={<Ostoskori cart={cart} removeFromCart={removeFromCart} updateAmount={updateAmount} empty={emptyCart} />} />
       <Route path="/search/:searchPhrase" element={<Products url={URL}/>} />
       <Route path="/Feedback/" element={<Feedback />} />
       <Route path="/Manage/" element={<Manage />} />
@@ -84,13 +81,6 @@ function App() {
     <Footer />
 
     </>
-  
-  
   );
-
-
 }
-
-
-
 export default App;

@@ -4,8 +4,6 @@ import Mainos1 from "../images/mainos1.png";
 import Mainos2 from "../images/mainos2.png";
 import Mainos3 from "../images/mainos3.png";
 
-
-
 export default function Bootstrap_Carousel() {
     return (
 
@@ -26,7 +24,6 @@ export default function Bootstrap_Carousel() {
       alt="Second slide"
     />
 
-
   </Carousel.Item>
   <Carousel.Item>
     <img
@@ -35,15 +32,8 @@ export default function Bootstrap_Carousel() {
       alt="Third slide"
     />
 
-
   </Carousel.Item>
 </Carousel>
 </div>
-
-
 ) 
-
-
-    }
-
-  
+} 

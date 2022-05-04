@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import uuid from 'react-uuid';
 import { useEffect } from 'react';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
-export default function Ostoskori({cart, removeFromCart, updateAmount, url}) {
+
+export default function Ostoskori({cart, removeFromCart, updateAmount, empty}) {
     const [inputs,_] = useState([]);
     const [inputIndex,setInputIndex] = useState(-1);
     const [firstname,setFirstname] = useState('');
@@ -11,18 +14,23 @@ export default function Ostoskori({cart, removeFromCart, updateAmount, url}) {
     const [address,setAddress] = useState('');
     const [zip,setZip] = useState('');
     const [city,setCity] = useState('');
-    const [finished,setFinished] = useState ([false]);
+    const [product,setProduct] = useState ('');
+    const [finished,setFinished] = useState (false);
+
+    const URL = 'http://localhost/verkkokauppabackend/';
+
     let sum = 0
 
-    function changeAmount(e,product,index) {
-        updateAmount(e.target.value,product);
-        setInputIndex(index);
-    }
     useEffect(() => {
       for (let i = 0;i<cart.length;i++) {
           inputs[i] = React.createRef();
       }
-    }, [cart.length])
+    }, [cart.length,inputs])
+    
+    function changeAmount(e,product,index) {
+        updateAmount(e.target.value,product);
+        setInputIndex(index);
+    }
     
     useEffect(() => {
         if (inputs.length > 0 && inputIndex > -1 && inputs[inputIndex].current !== null) {
@@ -30,6 +38,7 @@ export default function Ostoskori({cart, removeFromCart, updateAmount, url}) {
         }
     },[cart])
       
+
     function order(e) {
         e.preventDefault();
         const json = JSON.stringify({
@@ -38,24 +47,27 @@ export default function Ostoskori({cart, removeFromCart, updateAmount, url}) {
             address: address,
             zip: zip,
             city: city,
+            product: product.amount,
             cart: cart,
-        });
-        axios.post(url + 'order/order.php',json,{
+            
+            });
+        axios.post(URL + 'order/order.php',json,{
             headers: {
                 'Accept': 'application/json',
                 'Content-Type' : 'application/json'
             }
         })
         .then(() => {
-            React.empty();
+            empty();
             setFinished(true);
         }).catch(error => {
             alert(error.response === undefined ? error: error.response.data.error);
         });
     }
+    if (finished === false ) {
     return (
-        <div>
-            <h3 className="header">Items in cart</h3>
+        <div className='taustaVari'>
+            <h3 className="header">Ostoskorisi</h3>
             <table className="table">
                 <tbody>
                     {cart.map((product, index) => {
@@ -65,9 +77,9 @@ export default function Ostoskori({cart, removeFromCart, updateAmount, url}) {
                                 <td>{product.name}</td>
                                 <td>{product.price} €</td>
                                 <td>
-                                    <input ref={inputs[index]} type="number" min="1" style={{width: '70px'}} class="OstoskoriNappi" value={product.amount} onChange={e => changeAmount(e,product,index)} />
+                                    <input ref={inputs[index]} type="number" min="1" style={{width: '70px'}} className="OstoskoriNappi" value={product.amount} onChange={e => changeAmount(e,product,index)} />
                                 </td>
-                                <td><a href="#" onClick={() => removeFromCart(product)}>Delete</a></td>
+                                <td><a href="#" onClick={() => removeFromCart(product)}><FontAwesomeIcon icon={faTrash} /> </a></td>
                             </tr>
                         )
                         })}
@@ -81,9 +93,9 @@ export default function Ostoskori({cart, removeFromCart, updateAmount, url}) {
 
             {cart.length > 0 &&
             <>
-            <h2>Asiakastiedot</h2>
-            <form onSubmit={order}>
-                <div className='form-group'>
+            <h3>Asiakastiedot</h3>
+            <form onSubmit={order} className="container">
+                <div className='form-group '>
                     <label>Etunimi:</label>
                     <input className="form-control" onChange={e => setFirstname(e.target.value)}></input>
                 </div>
@@ -103,10 +115,17 @@ export default function Ostoskori({cart, removeFromCart, updateAmount, url}) {
                     <label>Postitoimipaikka:</label>
                     <input className="form-control" onChange={e => setCity(e.target.value)}></input>
                 </div>
-                <button type="button" class="btn btn-primary">Vahvista tilaus</button>
+                <button type="submit" class="btn btn-primary manageNapit">Vahvista tilaus</button>
             </form>
             </>
             }
         </div>
     )
+        } else {
+            return (
+            <div className='taustaVari'>
+            <h3>Kiitos tilauksestasi!</h3>
+            </div>
+            )
+        }
 }

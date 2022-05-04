@@ -1,6 +1,5 @@
-import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 export default function Feedback() {
 
@@ -26,7 +25,7 @@ const handleSubmit = (e) => {
 }
 
     return (
-        <div className="container">
+        <div className="container taustaVari">
     <h1>Anna palautetta ja/tai ota meihin yhteyttä</h1>
     <form onSubmit={handleSubmit}>
     <label for="Etunimi">Etunimi: </label>
@@ -44,9 +43,9 @@ const handleSubmit = (e) => {
     <label for="viesti">Viesti: </label>
     <input type="text" name="message" id="message" required onChange={(e) => setMessage(e.target.value)}></input><br></br>
 
-    <input type="submit" value="Lähetä"></input>
+    <input type="submit" className='lahetaNappi btn btn-dark' value="Lähetä"></input>
   </form>
 
  </div>
-    )
-    }
+)
+}
