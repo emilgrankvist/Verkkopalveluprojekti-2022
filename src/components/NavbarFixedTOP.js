@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import Cart from "../components/Cart";
 
 export default function NavbarFixedTOP({url,cart}) {
 
