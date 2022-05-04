@@ -25,8 +25,6 @@ function executeSearch(e) {
   }
 }
 
-
-
     return (
 <div className='fixed-top FIXEDnavbarTOP ms-auto ' >
 <Navbar className='fixed-top '/>
@@ -34,18 +32,10 @@ function executeSearch(e) {
   <Navbar className='FIXEDnavbarTOP' expand="lg" variant="light" bg="light">
       <Navbar.Brand href="/Home"><FontAwesomeIcon icon={faHome} />  </Navbar.Brand>
       
-      
       <Navbar.Brand cart={cart} href="/Ostoskori"> 
-      
       <FontAwesomeIcon icon={faCartShopping}/>  
-
- 
-      
       </Navbar.Brand>
-       
-
-      
-    
+      <Cart cart={cart}></Cart>
 
     <form className="d-flex navbarHAKU  ms-auto navBarhakuPAD">
         <input 
@@ -54,14 +44,14 @@ function executeSearch(e) {
         onKeyPress={(e) => executeSearch(e)}
         className="form-control me-2 " 
         type="search" 
-        placeholder="Search" 
+        placeholder="Hae tuotteita" 
         aria-label="Search" />
 
         
-        <button className="btn btn-outline-primary" type="submit">Etsi</button>
+        <button className="btn btn-outline-primary" type="search" >Etsi</button>
       </form>
   </Navbar>
-
+      
 </Container>
 </div>
     )

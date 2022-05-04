@@ -71,7 +71,7 @@ function App() {
 
     <Navbar url={URL} />
 
- 
+    
    
     
 

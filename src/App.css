@@ -1,9 +1,5 @@
 /* tässä css lauseet jotka vaikuttavat kaikkialle */
 
-#grad {
-    background-image: linear-gradient(to right, red , yellow);
-  }
-
 a {
     padding: 10px;
 }
@@ -41,7 +37,9 @@ button {
 input {
   margin: 20px;
 }
-
+span {
+    color: black;
+}
 
 /* Feedback */
 
@@ -79,6 +77,10 @@ input[type=text], input[type=number], input[type=email], select, textarea {
   }
 
  /* NAVBAR muokkauksia */
+
+    .ostoskoriVari {
+        color: black;
+    }
 
     .FIXEDnavbarTOP {
         opacity: 90%;
@@ -211,6 +213,10 @@ input[type=text], input[type=number], input[type=email], select, textarea {
         margin-right: 10px;
     }
 
+    .korttiYläPadding {
+        padding-top: 20px;
+    }
+
 
 /* Footer muokkaukset */
 
@@ -226,6 +232,3 @@ input[type=text], input[type=number], input[type=email], select, textarea {
 
 
 
-/* Feedback */
-
-/* Sami Karvinen OEHHH EHHKAEE KUOPIOOOOOO */

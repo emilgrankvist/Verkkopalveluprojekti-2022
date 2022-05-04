@@ -45,7 +45,9 @@ export default function Products({ url,addToCart }) {
           {product.name}
           <div>
           <div><img src={url + 'img/' +product.image} alt="Kuva tuotteelle" className='korttiIMG'></img></div>
-          <button className='btn btn-primary korttiHintaPadding ' type='button' onClick={e => addToCart(product)}> <FontAwesomeIcon icon={faCartShopping} /> </button>  
+          <button className='btn btn-primary korttiHintaPadding ' type='button' onClick={e => addToCart(product)}> 
+          <FontAwesomeIcon icon={faCartShopping} /> 
+          </button>  
           {product.price} €
           
           </div>
