@@ -11,6 +11,9 @@ export default function Feedback() {
   const [message, setMessage] = useState({})
 
 const handleSubmit = (e) => {
+
+  e.target.reset();
+
   e.preventDefault();
   const json = JSON.stringify({firstName: firstName, lastName: lastName, phone: phone, email: email, message: message});
   
